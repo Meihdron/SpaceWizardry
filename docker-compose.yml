@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  basicauth:
+    image: basicauth
+    build:
+      context: .
+      dockerfile: BasicAuth\Dockerfile
+
+  authpage:
+    image: authpage
+    build:
+      context: .
+      dockerfile: AuthPage\Dockerfile
+
