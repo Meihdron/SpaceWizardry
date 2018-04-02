@@ -5,7 +5,7 @@ namespace SpaceWizardry
     class test
     {
         const string EveAuthURL = "https://login.eveonline.com/oauth/authorize";
-        const string RedirectURL = "http://localhost:50000/";
+        const string RedirectURL = "http://localhost:50000";
         const string ClientID = "413ec8fc7c8441e49cd354bfc5c588ed";
         const string ClientSecret = "nz8nNSpXgNFOTtIJAHOq5oRXQu2Xq7jm05zOJGVk";
         const string Scope = "characterContactsRead characterContactsWrite";
@@ -22,7 +22,7 @@ namespace SpaceWizardry
             //After logging in on the eve login site, the browser gets redirected to the redirect URL that is part of the registration of 3rd party apps. 
             //The "webserver" will listen on the given port, and call a method in the authenticator object, which will obtain the actual access token. 
             //for debug porposes this is then returned to the browser so we can see if that actually worked
-            Auth.LightweightWebServer ws = new Auth.LightweightWebServer(auth.getAuthKey, RedirectURL);
+            Auth.LightweightWebServer ws = new Auth.LightweightWebServer(auth.getAuthKey, RedirectURL +"/");
 
 
             //start up the http listener

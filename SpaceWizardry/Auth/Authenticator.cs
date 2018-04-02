@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net;
+using System.Web;
+using Microsoft.Win32;
+using System.Runtime.InteropServices;
 
 namespace SpaceWizardry.Auth
 {
@@ -44,7 +47,7 @@ namespace SpaceWizardry.Auth
         public void redirectToLogin()
         {
             string url = $"{_ssoURL}/?response_type=code&redirect_uri={_redirectURL}&client_id={_clientID}&scope={_authScope}";
-            System.Diagnostics.Process.Start(url);
+            OpenBrowser(url);
         }
 
         /// <summary>
@@ -83,6 +86,34 @@ namespace SpaceWizardry.Auth
                 postParams.Add("code", AuthKey);
 
                 _Token = Encoding.UTF8.GetString(client.UploadValues(_oauthURL, "POST", postParams));
+            }
+        }
+        public static void OpenBrowser(string url)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(url);
+            }
+            catch
+            {
+                // hack because of this: https://github.com/dotnet/corefx/issues/10361
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    url = url.Replace("&", "^&");
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    System.Diagnostics.Process.Start("xdg-open", url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    System.Diagnostics.Process.Start("open", url);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
     }
