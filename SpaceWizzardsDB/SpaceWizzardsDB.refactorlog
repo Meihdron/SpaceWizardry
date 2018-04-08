@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="4d493b9f-5e40-400a-aaf9-76a3485adb08" ChangeDateTime="04/08/2018 00:42:07">
+    <Property Name="ElementName" Value="[character].[Character].[characterName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[character].[Character]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CharacterName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4b335547-1979-4b58-94cf-ba6fd416ff1a" ChangeDateTime="04/08/2018 00:42:46">
+    <Property Name="ElementName" Value="[Auth].[Token].[access_token]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Auth].[Token]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AccessToken" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="db301b15-f1c0-4fa3-ba0a-b65ab68aa475" ChangeDateTime="04/08/2018 00:42:50">
+    <Property Name="ElementName" Value="[Auth].[Token].[token_type]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Auth].[Token]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TokeTtype" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="453a0594-fe57-435d-9eed-9054cc970496" ChangeDateTime="04/08/2018 00:42:54">
+    <Property Name="ElementName" Value="[Auth].[Token].[TokeTtype]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Auth].[Token]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TokenType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1f3005e1-ca11-4d2c-b59f-0715d57c7c5f" ChangeDateTime="04/08/2018 00:42:59">
+    <Property Name="ElementName" Value="[Auth].[Token].[refresh_token]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Auth].[Token]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RefreshToken" />
+  </Operation>
+</Operations>

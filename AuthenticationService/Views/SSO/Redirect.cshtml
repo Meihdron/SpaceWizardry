@@ -1,0 +1,33 @@
+﻿@model AuthenticationService.Models.SSO_Redirect
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SSO Redirect</title>
+</head>
+<body>
+
+<div>
+    <h4>SSO_Redirect</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SSO_URL)
+        </dt>
+        <dd>
+            <a href="@Html.DisplayFor(model => model.SSO_URL)">Login to Eve</a>
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit",  "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>
